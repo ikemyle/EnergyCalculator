@@ -1,0 +1,56 @@
+﻿@page
+@model CoreApp.Pages.Energy.PowerLoadModel
+@{
+    ViewData["Title"] = "PowerLoad";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>PowerLoad</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <p>Predefined Loads</p>
+            <div class="btn-group">
+                <button type="button" onclick="Power.PostLoad(1);" class="btn btn-primary">Load 1</button>
+                <button type="button" onclick="Power.PostLoad(2);" class="btn btn-primary">Load 2</button>
+                <button type="button" onclick="Power.PostLoad(3);" class="btn btn-primary">Load 3</button>
+            </div>
+            <div class="form-group">
+                <label for="jsonload">Json Load:</label>
+                <textarea style="min-height:400px;" class="form-control" rows="5" id="jsonload"></textarea>
+            </div>
+            <div class="text-center">
+                <button type="button" id="btnLoadFromText" class="btn btn-primary btn-lg"><i class="fa fa-upload"></i>&nbsp;Load From Text Area</button> 
+            </div>
+        </div>
+        <div class="col-md-6">
+            <table id="pwDistribution" class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>MWH</th>
+                    </tr>
+                </thead>
+            </table>
+            
+            <div id="alertSuccess" class="alert alert-success" style="display:none;" role="alert">
+                Specified turbines can sustain the load!
+                <p id="powerTotalSuccess"></p>
+            </div>
+            <div id="alertError" class="alert alert-danger" style="display:none;" role="alert">
+                ALERT!! Specified turbines cannot sustain the load!
+                <p id="powerTotalError"></p>
+            </div>
+            <hr />
+            <div class="form-group">
+                <label for="jsonresponse">Json Result:</label>
+                <textarea style="min-height:200px;" class="form-control" rows="5" id="jsonresponse"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/js/power.js"></script>
+    <script src="~/js/co2socket.js"></script>
+    <partial name="_DataTablesPartial" />
+}

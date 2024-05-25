@@ -1,0 +1,14 @@
+﻿@page
+@model CoreApp.Pages.Energy.Co2EmissionModel
+@{
+    ViewData["Title"] = "Co2Emission";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Co2Emission</h1>
+
+<ul id="powerstream" class="list-group"></ul>
+@section Scripts {
+    <script src="~/js/co2socket.js"></script>
+    <partial name="_DataTablesPartial" />
+}

@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="images/windmill.jpg" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Power Load</h4>
+                    <p class="card-text">The power load computattion.</p>
+                    <a asp-area="" asp-page="/energy/powerload"  class="btn btn-primary">Open Page</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="images/Co2Emission.jpg" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">CO2 Emission</h4>
+                    <p class="card-text">Live hourly CO2 Emission.</p>
+                    <a asp-area="" asp-page="/energy/co2emission" class="btn btn-primary">Open Page</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
